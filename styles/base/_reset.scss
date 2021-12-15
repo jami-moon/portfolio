@@ -1,0 +1,55 @@
+// 추가로 초기화 하고 싶은 것들 처리
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: $font-main;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: $black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: 0;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button {
+  padding: 0;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}

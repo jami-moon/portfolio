@@ -1,0 +1,4 @@
+# # CSS,SCSS files don't need stylelint
+style.css
+style.css.map
+_normalize.scss

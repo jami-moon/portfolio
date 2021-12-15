@@ -1,0 +1,29 @@
+@use "sass:map";
+
+$flex-attr-map: (
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+  center: center,
+);
+
+@mixin flex($jc: center, $ai: center) {
+  display: flex;
+  align-items: map.get($flex-attr-map, $ai);
+  justify-content: map.get($flex-attr-map, $jc);
+}
+
+@mixin inline-flex($jc: center, $ai: center) {
+  display: inline-flex;
+  align-items: map.get($flex-attr-map, $ai);
+  justify-content: map.get($flex-attr-map, $jc);
+}
+
+@mixin column-flex($jc: center, $ai: center) {
+  display: flex;
+  flex-direction: column;
+  align-items: map.get($flex-attr-map, $ai);
+  justify-content: map.get($flex-attr-map, $jc);
+}

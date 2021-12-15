@@ -1,0 +1,19 @@
+@mixin responsive($screen) {
+  @if ($screen == "md") {
+    @media screen and (min-width: $md-breakpoint) {
+      @content;
+    }
+  }
+
+  @if ($screen == "lg") {
+    @media screen and (min-width: $xl-breakpoint) {
+      @content;
+    }
+  }
+
+  @if ($screen == "xl") {
+    @media screen and (min-width: $xl-breakpoint) {
+      @content;
+    }
+  }
+}
