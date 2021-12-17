@@ -13,17 +13,19 @@
       rel="stylesheet"
     />
     <!-- 메인 CSS 링크 -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- JS 링크 -->
+    <script src="./js/main.js" defer></script>
   </head>
   <body>
+    <!-- header section -->
     <header class="header">
       <div class="header__container">
         <h1 class="header__title"><a href="#">TAEKYU</a></h1>
         <ul class="gnb">
           <li class="gnb__item"><a href="#intro">Intro</a></li>
           <li class="gnb__item"><a href="#about">About</a></li>
-          <li class="gnb__item"><a href="#skill">Skills</a></li>
+          <li class="gnb__item"><a href="#skills">Skills</a></li>
           <li class="gnb__item"><a href="#portfolio">Portfolio</a></li>
           <li class="gnb__item"><a href="#Epilogue">Epilogue</a></li>
         </ul>
@@ -33,6 +35,7 @@
         </span>
       </div>
     </header>
+    <!-- intro section -->
     <section id="intro" class="intro">
       <div class="intro__container">
         <div class="intro__image-wrapper">
@@ -48,6 +51,7 @@
         </div>
       </div>
     </section>
+    <!-- about section -->
     <section id="about" class="about">
       <div class="section-container">
         <div class="section-title">
@@ -75,7 +79,98 @@
         </div>
       </div>
     </section>
-    <section id="skill" class="skill"></section>
+    <section id="skills" class="skills">
+      <div class="section-container">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <span>PUBLISHING SKILL</span>
+        </div>
+        <ul class="skills__list xl-hidden">
+          <li class="skills__item active"><button type="button">HTML</button></li>
+          <li class="skills__item"><button type="button">CSS</button></li>
+          <li class="skills__item"><button type="button">SCSS</button></li>
+          <li class="skills__item"><button type="button">JavaScript / JQUERY</button></li>
+        </ul>
+        <div class="skills__desc-box">
+          <div class="skills__desc skills__desc--html open">
+            <img src="./assets/images/skills_html.png" alt="HTML 로고" />
+            <span class="xl-only">HTML</span>
+            <p>
+              의미에 맞는 태그를 활용하는 시멘틱한 마크업에 관심이 많습니다. BEM방법론 등을 활용하여
+              유지보수를 고려한 id 및 class 작성이 가능합니다. 웹 접근성을 고려한 WAI-ARIA 속성 등을
+              활용할 수 있습니다.
+            </p>
+          </div>
+          <div class="skills__desc skills__desc--css">
+            <img src="./assets/images/skills_css.png" alt="CSS 로고" />
+            <span class="xl-only">CSS</span>
+            <p>
+              Class 제어를 통한 여러가지 시각적인 효과를 표현할 수 있습니다. style-lint 등의
+              linter를 활용해 올바르고, 순서있는 CSS를 작성할 수 있습니다. 일반적인 반응형 작업
+              외에도 그리드 시스템을 활용한 반응형 작업을 한 경험이 있습니다.
+            </p>
+          </div>
+          <div class="skills__desc skills__desc--scss">
+            <img src="./assets/images/skills_scss.png" alt="SCSS 로고" / >
+            <span class="xl-only">SCSS</span>
+            <p>
+              CSS 모듈화에 관심이 생겨 SCSS를 배웠으며 SCSS를 활용한 코드 재사용 및 함수, 연산자
+              활용이 가능합니다. 최근 새로 패치된 dart-sass를 통해 CSS파일로의 컴파일이 가능합니다.
+            </p>
+          </div>
+          <div class="skills__desc skills__desc--js">
+            <img src="./assets/images/skills_js.png" alt="JS 로고" />
+            <span class="xl-only">JavaScript</span>
+            <p>
+              자바스크립트,제이쿼리의 DOM 제어를 통해 여러가지 시각적인 효과를 표현할 수 있습니다.
+              네비게이션과 메뉴 등에서 사용되는 기능들을 스스로 작성할 수 있습니다. 여러가지
+              자바스크립트, 제이쿼리 플러그인을 공식문서를 참조하여 활용할 수 있습니다. 순수 바닐라
+              자바스크립트에도 관심이 많아 계속 공부중입니다.
+            </p>
+          </div>
+        </div>
+        <div class="section-title">
+          <span>DESIGN&DEV SKILL</span>
+        </div>
+        <ul class="skills__list xl-hidden">
+          <li class="skills__item active"><button type="button">PHOTOSHOP</button></li>
+          <li class="skills__item"><button type="button">FIGMA</button></li>
+          <li class="skills__item"><button type="button">VSCODE</button></li>
+          <li class="skills__item"><button type="button">GITHUB</button></li>
+        </ul>
+        <div class="skills__desc-box">
+          <div class="skills__desc skills__desc--photo open">
+            <img src="./assets/images/skills_photoshop.png" alt="Photoshop 로고" />
+            <span class="xl-only">Photoshop</span>
+            <p>퍼블리싱에 필요한 이미지 크기 편집, 배경 제거, 압축 등의 작업이 가능합니다.</p>
+          </div>
+          <div class="skills__desc skills__desc--figma">
+            <img src="./assets/images/skills_figma.png" alt="Figma 로고" />
+            <span class="xl-only">FIGMA</span>
+            <p>
+              피그마의 폰트 정보, 이미지 소스, 수치 등을 추출해서 시안 그대로의 퍼블리싱이
+              가능합니다. 기본적인 웹 디자인 구성 및 그리드 시스템 적용이 가능합니다.
+            </p>
+          </div>
+          <div class="skills__desc skills__desc--vs">
+            <img src="./assets/images/skills_vs.png" alt="VSCode 로고" />
+            <span class="xl-only">Visual Studio Code</span>
+            <p>
+              퍼블리싱에 VSCode를 적극적으로 활용하고 있습니다. 효율성 있는 개발 환경에 관심에 많아
+              여러 단축키를 외우고 있으며, 이를 작업에 적용시킬 수 있습니다.
+            </p>
+          </div>
+          <div class="skills__desc skills__desc--github">
+            <img src="./assets/images/skills_github.png" alt="GitHub 로고" />
+            <span class="xl-only">GitHub</span>
+            <p>
+              GitHub를 통해 branch 간의 이동, 원격 저장소로의 커밋 메시지 전달 및 버전 push 등
+              기본적인 버전 관리가 가능합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="portfolio" class="portfolio"></section>
     <section id="epilogue" class="epilogue"></section>
     <footer class="footer"></footer>
