@@ -9,3 +9,9 @@
 @import "./mixins/responsive";
 @import "./mixins/flexbox";
 @import "./mixins/positions";
+
+@import "./modules/section";
+
+@import "./layouts/header";
+@import "./layouts/intro";
+@import "./layouts/about";

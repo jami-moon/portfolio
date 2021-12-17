@@ -4,19 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAE's portfolio</title>
+    <title>태규의 포트폴리오</title>
+    <!-- 구글 폰트 링크 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
     <!-- 메인 CSS 링크 -->
     <link rel="stylesheet" href="/style.css" />
     <!-- JS 링크 -->
   </head>
   <body>
-    <header></header>
-    <aside></aside>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <footer></footer>
+    <header class="header">
+      <div class="header__container">
+        <h1 class="header__title"><a href="#">TAEKYU</a></h1>
+        <ul class="gnb">
+          <li class="gnb__item"><a href="#intro">Intro</a></li>
+          <li class="gnb__item"><a href="#about">About</a></li>
+          <li class="gnb__item"><a href="#skill">Skills</a></li>
+          <li class="gnb__item"><a href="#portfolio">Portfolio</a></li>
+          <li class="gnb__item"><a href="#Epilogue">Epilogue</a></li>
+        </ul>
+        <span class="copyright xl-only">
+          © 2021<br />
+          Created by HATAEKYU
+        </span>
+      </div>
+    </header>
+    <section id="intro" class="intro">
+      <div class="intro__container">
+        <div class="intro__image-wrapper">
+          <img src="./assets/images/title.jpg" alt="intro 타이틀 이미지" />
+        </div>
+        <div class="intro__content">
+          <h2 class="intro__title">WELCOME :)</h2>
+          <p class="intro__text">
+            안녕하세요! 방문해 주셔서 감사합니다.<br />
+            궁금한 것은 반드시 알아내는 성격을 바탕으로<br />
+            <strong>누구보다 꼼꼼하고 생산성 있는 퍼블리셔</strong>가 되겠습니다.<br />
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <div class="section-container">
+        <div class="section-title">
+          <h2>About</h2>
+          <span>HATAEKYU</span>
+        </div>
+        <div class="about__content">
+          <div class="about__image-wrapper">
+            <!-- <img class="about__image" src="./assets/images/title2_black.jpg" alt="about 타이틀 이미지 - 흑백" /> -->
+            <img
+              class="about__image"
+              src="./assets/images/title2.jpg"
+              alt="about 타이틀 이미지 - 컬러"
+            />
+          </div>
+          <p class="about__text">
+            제가 정말 사랑할만한 일을 찾고자 했습니다.<br />
+            학부시절, 과제발표 당일 아침까지<br />
+            여러 사람의 자료가 합쳐져 엉망인 PPT 속 이미지들의<br />
+            정렬을 맞추던 경험이 떠올랐고, 퍼블리싱을 배우게 되었습니다.<br />
+            저는 무슨 일을 맡든 강한 책임감을 느끼고 디테일에 집중합니다.<br />
+            <strong>'margin:1px'</strong>
+            하나라도 놓치지 않는 퍼블리셔가 되겠습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="skill" class="skill"></section>
+    <section id="portfolio" class="portfolio"></section>
+    <section id="epilogue" class="epilogue"></section>
+    <footer class="footer"></footer>
   </body>
 </html>
