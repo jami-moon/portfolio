@@ -445,7 +445,6 @@ section {
 }
 .section-container .section-title {
   align-self: flex-start;
-  margin-bottom: 50px;
 }
 .section-container .section-title h2 {
   display: inline-block;
@@ -740,6 +739,9 @@ section {
   }
 }
 
+.about .section-title {
+  margin-bottom: 50px;
+}
 .about__content {
   display: flex;
   flex-direction: column;
@@ -823,6 +825,115 @@ section {
   }
   .about__text {
     font-size: 1.1rem;
+  }
+}
+
+.skills .section-title {
+  margin-bottom: 20px;
+}
+.skills__list {
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: 40px;
+}
+.skills__item {
+  margin-right: 10px;
+}
+.skills__item button {
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  background-color: #0000000a;
+  transition: all 0.3s;
+}
+.skills__item.active button {
+  color: #fff;
+  background: #767676;
+}
+.skills__desc-box {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.skills__desc-box .skills__desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.skills__desc-box .skills__desc img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.skills__desc-box .skills__desc p {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #767676;
+  text-align: center;
+}
+.skills__desc-box .skills__desc.open {
+  visibility: visible;
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .skills__desc-box {
+    height: 350px;
+  }
+  .skills__list {
+    margin-bottom: 80px;
+  }
+  .skills__desc-box .skills__desc p {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .skills__item button {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .skills .section-title {
+    margin-bottom: 100px;
+  }
+  .skills__desc-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 50px;
+  }
+  .skills__desc-box .skills__desc {
+    position: static;
+    width: 50%;
+    margin-bottom: 50px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .skills__desc-box .skills__desc img {
+    width: 70px;
+    height: 70px;
+    margin: 0 0 15px -3px;
+  }
+  .skills__desc-box .skills__desc span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 900;
+  }
+  .skills__desc-box .skills__desc p {
+    margin: 0;
+    font-size: 1rem;
+    text-align: left;
   }
 }
 
