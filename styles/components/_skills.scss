@@ -26,6 +26,10 @@
         background: $gray;
       }
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__desc-box {
