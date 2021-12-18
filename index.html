@@ -18,7 +18,7 @@
     <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <!-- header section -->
+    <!-- 헤더 영역 -->
     <header class="header">
       <div class="header__container">
         <h1 class="header__title"><a href="#">TAEKYU</a></h1>
@@ -35,7 +35,7 @@
         </span>
       </div>
     </header>
-    <!-- intro section -->
+    <!-- 인트로 영역 -->
     <section id="intro" class="intro">
       <div class="intro__container">
         <div class="intro__image-wrapper">
@@ -51,7 +51,7 @@
         </div>
       </div>
     </section>
-    <!-- about section -->
+    <!-- 어바웃 영역 -->
     <section id="about" class="about">
       <div class="section-container">
         <div class="section-title">
@@ -60,7 +60,6 @@
         </div>
         <div class="about__content">
           <div class="about__image-wrapper">
-            <!-- <img class="about__image" src="./assets/images/title2_black.jpg" alt="about 타이틀 이미지 - 흑백" /> -->
             <img
               class="about__image"
               src="./assets/images/title2.jpg"
@@ -79,72 +78,151 @@
         </div>
       </div>
     </section>
+    <!-- 스킬 영역 -->
     <section id="skills" class="skills">
       <div class="section-container">
+        <!-- 퍼블리싱 스킬 -->
         <div class="section-title">
           <h2>Skills</h2>
           <span>PUBLISHING SKILL</span>
         </div>
-        <ul class="skills__list xl-hidden">
-          <li class="skills__item active"><button type="button">HTML</button></li>
-          <li class="skills__item"><button type="button">CSS</button></li>
-          <li class="skills__item"><button type="button">SCSS</button></li>
-          <li class="skills__item"><button type="button">JavaScript / JQUERY</button></li>
+        <ul class="skills__list xl-hidden" role="tablist" aria-label="스킬 탭 목록">
+          <li
+            id="skills__tab--html"
+            class="skills__item active"
+            role="tab"
+            aria-controls="skills__desc--html"
+          >
+            <button type="button">HTML</button>
+          </li>
+          <li
+            id="skills__tab--css"
+            class="skills__item"
+            role="tab"
+            aria-controls="skills__desc--css"
+          >
+            <button type="button">CSS</button>
+          </li>
+          <li
+            id="skills__tab--scss"
+            class="skills__item"
+            role="tab"
+            aria-controls="skills__desc--scss"
+          >
+            <button type="button">SCSS</button>
+          </li>
+          <li id="skills__tab--js" class="skills__item" role="tab" aria-controls="skills__desc--js">
+            <button type="button">JavaScript / JQUERY</button>
+          </li>
         </ul>
         <div class="skills__desc-box">
-          <div class="skills__desc skills__desc--html open">
+          <div
+            id="skills__desc--html"
+            class="skills__desc open"
+            role="tabpanel"
+            aria-labelledby="skills__tab--html"
+          >
             <img src="./assets/images/skills_html.png" alt="HTML 로고" />
             <span class="xl-only">HTML</span>
             <p>
               의미에 맞는 태그를 활용하는 시멘틱한 마크업에 관심이 많습니다. BEM방법론 등을 활용하여
-              유지보수를 고려한 id 및 class 작성이 가능합니다. 웹 접근성을 고려한 WAI-ARIA 속성 등을
-              활용할 수 있습니다.
+              유지보수를 고려한 id 및 class 작성이 가능합니다. 웹 접근성을 위한 WAI-ARIA 속성 등을
+              공부하고 있습니다.
             </p>
           </div>
-          <div class="skills__desc skills__desc--css">
+          <div
+            id="skills__desc--css"
+            class="skills__desc"
+            role="tabpanel"
+            aria-labelledby="skills__tab--css"
+          >
             <img src="./assets/images/skills_css.png" alt="CSS 로고" />
             <span class="xl-only">CSS</span>
             <p>
-              Class 제어를 통한 여러가지 시각적인 효과를 표현할 수 있습니다. style-lint 등의
+              Class 제어를 통해 여러가지 시각적인 효과를 표현할 수 있습니다. style-lint 등의
               linter를 활용해 올바르고, 순서있는 CSS를 작성할 수 있습니다. 일반적인 반응형 작업
               외에도 그리드 시스템을 활용한 반응형 작업을 한 경험이 있습니다.
             </p>
           </div>
-          <div class="skills__desc skills__desc--scss">
+          <div
+            id="skills__desc--scss"
+            class="skills__desc"
+            role="tabpanel"
+            aria-labelledby="skills__tab--scss"
+          >
             <img src="./assets/images/skills_scss.png" alt="SCSS 로고" / >
             <span class="xl-only">SCSS</span>
             <p>
               CSS 모듈화에 관심이 생겨 SCSS를 배웠으며 SCSS를 활용한 코드 재사용 및 함수, 연산자
-              활용이 가능합니다. 최근 새로 패치된 dart-sass를 통해 CSS파일로의 컴파일이 가능합니다.
+              활용이 가능합니다. 최근 업데이트된 dart-sass를 통해 CSS파일로의 컴파일이 가능합니다.
             </p>
           </div>
-          <div class="skills__desc skills__desc--js">
+          <div
+            id="skills__desc--js"
+            class="skills__desc"
+            role="tabpanel"
+            aria-labelledby="skills__tab--js"
+          >
             <img src="./assets/images/skills_js.png" alt="JS 로고" />
             <span class="xl-only">JavaScript</span>
             <p>
               자바스크립트,제이쿼리의 DOM 제어를 통해 여러가지 시각적인 효과를 표현할 수 있습니다.
-              네비게이션과 메뉴 등에서 사용되는 기능들을 스스로 작성할 수 있습니다. 여러가지
-              자바스크립트, 제이쿼리 플러그인을 공식문서를 참조하여 활용할 수 있습니다. 순수 바닐라
-              자바스크립트에도 관심이 많아 계속 공부중입니다.
+              네비게이션과 메뉴 등에서 사용되는 기능들을 순수 자바스크립트, 제이쿼리로 작성할 수
+              있습니다. 여러가지 자바스크립트, 제이쿼리 플러그인을 공식문서를 참조하여 활용할 수
+              있습니다.
             </p>
           </div>
         </div>
+        <!-- 디자인 & 개발 스킬 -->
         <div class="section-title">
           <span>DESIGN&DEV SKILL</span>
         </div>
-        <ul class="skills__list xl-hidden">
-          <li class="skills__item active"><button type="button">PHOTOSHOP</button></li>
-          <li class="skills__item"><button type="button">FIGMA</button></li>
-          <li class="skills__item"><button type="button">VSCODE</button></li>
-          <li class="skills__item"><button type="button">GITHUB</button></li>
+        <ul class="skills__list xl-hidden" role="tablist" aria-label="스킬 탭 목록">
+          <li
+            id="skills__tab--photo"
+            class="skills__item active"
+            role="tab"
+            aria-controls="skills__desc--photo"
+          >
+            <button type="button">PHOTOSHOP</button>
+          </li>
+          <li
+            id="skills__tab--figma"
+            class="skills__item"
+            role="tab"
+            aria-controls="skills__desc--figma"
+          >
+            <button type="button">FIGMA</button>
+          </li>
+          <li id="skills__tab--vs" class="skills__item" role="tab" aria-controls="skills__desc--vs">
+            <button type="button">VSCODE</button>
+          </li>
+          <li
+            id="skills__tab--github"
+            class="skills__item"
+            role="tab"
+            aria-labelledby="skills__desc--github"
+          >
+            <button type="button">GITHUB</button>
+          </li>
         </ul>
         <div class="skills__desc-box">
-          <div class="skills__desc skills__desc--photo open">
+          <div
+            id="skills__desc--photo"
+            class="skills__desc open"
+            role="tabpanel"
+            aria-labelledby="skills__tab--photo"
+          >
             <img src="./assets/images/skills_photoshop.png" alt="Photoshop 로고" />
             <span class="xl-only">Photoshop</span>
             <p>퍼블리싱에 필요한 이미지 크기 편집, 배경 제거, 압축 등의 작업이 가능합니다.</p>
           </div>
-          <div class="skills__desc skills__desc--figma">
+          <div
+            id="skills__desc--figma"
+            class="skills__desc"
+            role="tabpanel"
+            aria-labelledby="skills__tab--figma"
+          >
             <img src="./assets/images/skills_figma.png" alt="Figma 로고" />
             <span class="xl-only">FIGMA</span>
             <p>
@@ -152,7 +230,12 @@
               가능합니다. 기본적인 웹 디자인 구성 및 그리드 시스템 적용이 가능합니다.
             </p>
           </div>
-          <div class="skills__desc skills__desc--vs">
+          <div
+            id="skills__desc--vs"
+            class="skills__desc"
+            role="tabpanel"
+            aria-labelledby="skills__tab--vs"
+          >
             <img src="./assets/images/skills_vs.png" alt="VSCode 로고" />
             <span class="xl-only">Visual Studio Code</span>
             <p>
@@ -160,7 +243,12 @@
               여러 단축키를 외우고 있으며, 이를 작업에 적용시킬 수 있습니다.
             </p>
           </div>
-          <div class="skills__desc skills__desc--github">
+          <div
+            id="skills__desc--github"
+            class="skills__desc"
+            role="tabpanel"
+            aria-labelledby="skills__tab--github"
+          >
             <img src="./assets/images/skills_github.png" alt="GitHub 로고" />
             <span class="xl-only">GitHub</span>
             <p>
