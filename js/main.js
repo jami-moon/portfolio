@@ -75,9 +75,44 @@ const thumbnails = new Swiper(".portfolio-thumbnails", {
     },
   },
 });
-
 portfolios.controller.control = thumbnails;
 thumbnails.controller.control = portfolios;
+
+// 엘리먼트 위치 확인
+function checkElementLocation(elem, triggerDiff) {
+  const elFromTop = elem.getBoundingClientRect().top;
+  return elFromTop > window.innerHeight + (triggerDiff || 0);
+}
+
+//윈도우 스크롤 이벤트 핸들러
+function handleScroll() {
+  const elToLeft = document.querySelectorAll(".scroll-left");
+  const elToRight = document.querySelectorAll(".scroll-right");
+  const triggerPoint = window.innerHeight / 2;
+
+  elToLeft.forEach((el) => {
+    if (checkElementLocation(el, -triggerPoint)) {
+      el.style.opacity = "0";
+      el.style.transform = "translateX(100px)";
+    } else {
+      el.style.opacity = "1";
+      el.style.transform = "translateX(0px)";
+    }
+  });
+
+  elToRight.forEach((el) => {
+    if (checkElementLocation(el, -triggerPoint)) {
+      el.style.opacity = "0";
+      el.style.transform = "translateX(-100px)";
+    } else {
+      el.style.opacity = "1";
+      el.style.transform = "translateX(0px)";
+    }
+  });
+}
+
+// 윈도우 스크롤이벤트
+window.addEventListener("scroll", handleScroll);
 
 // 윈도우 사이즈 변경시 함수 재실행
 window.addEventListener("resize", skillTabFunc);
