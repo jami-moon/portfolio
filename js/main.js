@@ -33,5 +33,48 @@ function skillTabFunc() {
 
 skillTabFunc();
 
+// 포트폴리오 섹션 Swiper 설정
+const portfolios = new Swiper(".portfolio-slider", {
+  direction: "horizontal",
+  loop: true,
+  speed: 600,
+  slidesPerView: 1,
+  loop: true,
+  loopedSlides: 6,
+  navigation: {
+    prevEl: ".portfolio-slider__controls--prev",
+    nextEl: ".portfolio-slider__controls--next",
+  },
+});
+
+// 포트폴리오 썸네일 Swiper
+const thumbnails = new Swiper(".portfolio-thumbnails", {
+  slidesPerView: "4",
+  spaceBetween: 5,
+  centeredSlides: true,
+  loop: true,
+  slideToClickedSlide: true,
+  touchRatio: 0,
+  breakpoints: {
+    992: {
+      slidesPerView: "6",
+      spaceBetween: 10,
+    },
+    1200: {
+      slidesPerView: "4",
+    },
+    1400: {
+      slidesPerView: "5",
+    },
+    1700: {
+      slidesPerView: "6",
+      spaceBetween: 0,
+    },
+  },
+});
+
+portfolios.controller.control = thumbnails;
+thumbnails.controller.control = portfolios;
+
 // 윈도우 사이즈 변경시 함수 재실행
 window.addEventListener("resize", skillTabFunc);

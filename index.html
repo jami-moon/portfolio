@@ -5,30 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>태규의 포트폴리오</title>
-    <!-- 구글 폰트 링크 -->
+    <!-- 구글 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap"
       rel="stylesheet"
     />
-    <!-- 메인 CSS 링크 -->
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- Featherlight CSS CDN -->
+    <link
+      href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <!-- 메인 CSS -->
     <link rel="stylesheet" href="./style.css" />
-    <!-- JS 링크 -->
-    <script src="./js/main.js" defer></script>
+    <!-- JQUERY CDN -->
+    <script defer src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- Swiper JS CDN -->
+    <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- Featherlight JS CDN -->
+    <script
+      defer
+      src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <!-- Main JS -->
+    <script defer src="./js/main.js"></script>
   </head>
   <body>
     <!-- 헤더 영역 -->
     <header class="header">
       <div class="header__container">
+        <!-- 헤더 타이틀 -->
         <h1 class="header__title"><a href="#">TAEKYU</a></h1>
+        <!-- 글로벌 네비게이션 메뉴 -->
         <ul class="gnb">
           <li class="gnb__item"><a href="#intro">Intro</a></li>
           <li class="gnb__item"><a href="#about">About</a></li>
           <li class="gnb__item"><a href="#skills">Skills</a></li>
           <li class="gnb__item"><a href="#portfolio">Portfolio</a></li>
-          <li class="gnb__item"><a href="#Epilogue">Epilogue</a></li>
+          <li class="gnb__item"><a href="#epilogue">Epilogue</a></li>
         </ul>
+        <!-- 저작권 -->
         <span class="copyright xl-only">
           © 2021<br />
           Created by HATAEKYU
@@ -38,9 +60,11 @@
     <!-- 인트로 영역 -->
     <section id="intro" class="intro">
       <div class="intro__container">
+        <!-- 인트로 이미지 -->
         <div class="intro__image-wrapper">
           <img src="./assets/images/title.jpg" alt="intro 타이틀 이미지" />
         </div>
+        <!-- 인트로 콘텐츠 -->
         <div class="intro__content">
           <h2 class="intro__title">WELCOME :)</h2>
           <p class="intro__text">
@@ -54,10 +78,12 @@
     <!-- 어바웃 영역 -->
     <section id="about" class="about">
       <div class="section-container">
+        <!-- 어바웃 타이틀 -->
         <div class="section-title">
           <h2>About</h2>
           <span>HATAEKYU</span>
         </div>
+        <!-- 어바웃 콘텐츠 -->
         <div class="about__content">
           <div class="about__image-wrapper">
             <img
@@ -259,8 +285,253 @@
         </div>
       </div>
     </section>
-    <section id="portfolio" class="portfolio"></section>
-    <section id="epilogue" class="epilogue"></section>
+    <!-- 포트폴리오 영역 -->
+    <section id="portfolio" class="portfolio">
+      <div class="section-container">
+        <!-- 포트폴리오 타이틀 -->
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <span>MY PROJECTS</span>
+        </div>
+        <!-- 포트폴리오 썸네일 슬라이더 -->
+        <div class="portfolio-thumbnails swiper">
+          <div class="swiper-wrapper">
+            <div class="portfolio-thumbnails__item swiper-slide">
+              <img
+                src="./assets/images/portfolio_thumb_hongruizhen.png"
+                alt="포트폴리오 홍루이젠 썸네일"
+              />
+            </div>
+            <div class="portfolio-thumbnails__item swiper-slide">
+              <img
+                src="./assets/images/portfolio_thumb_samwha.png"
+                alt="포트폴리오 삼화페인트 썸네일"
+              />
+            </div>
+            <div class="portfolio-thumbnails__item swiper-slide">
+              <img
+                src="./assets/images/portfolio_thumb_tomorrow-house.png"
+                alt="포트폴리오 내일의 집 썸네일"
+              />
+            </div>
+            <div class="portfolio-thumbnails__item swiper-slide">
+              <img src="./assets/images/portfolio_thumb_kerri.png" alt="포트폴리오 캐리 썸네일" />
+            </div>
+            <div class="portfolio-thumbnails__item swiper-slide">
+              <img
+                src="./assets/images/portfolio_thumb_zflip3.png"
+                alt="포트폴리오 제트플립 썸네일"
+              />
+            </div>
+            <div class="portfolio-thumbnails__item swiper-slide">
+              <img
+                src="./assets/images/portfolio_thumb_momentum.png"
+                alt="포트폴리오 모멘텀 썸네일"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 포트폴리오 슬라이더 -->
+        <div class="portfolio-slider swiper">
+          <div class="swiper-wrapper">
+            <!-- 슬라이드 -->
+            <div class="portfolio-slider__item swiper-slide">
+              <a
+                class="portfolio-slider__preview"
+                href="https://portfolio-hongruizhen.netlify.app"
+                target="_blank"
+              >
+                <img
+                  src="./assets/images/portfolio_hongruizhen.gif"
+                  alt="포트폴리오 홍루이젠 이미지"
+                />
+              </a>
+              <div class="portfolio-slider__desc">
+                <dl class="portfolio-slider__desc-name">
+                  <dt>Project name</dt>
+                  <dd>홍루이젠</dd>
+                </dl>
+                <dl class="portfolio-slider__desc-skills">
+                  <dt>Skills</dt>
+                  <dd>SCSS, 풀스크린, 자바스크립트</dd>
+                </dl>
+                <p class="portfolio-slider__desc-content">
+                  홍루이젠 브랜드의 메인 사이트를 구현하였습니다. 풀페이지 스크롤과 유튜브 API,
+                  시간차 애니메이션 등의 기능을 사용하였습니다.
+                </p>
+                <a
+                  class="portfolio-slider__desc-link"
+                  href="https://portfolio-hongruizhen.netlify.app"
+                  target="_blank"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-slider__item swiper-slide">
+              <a
+                class="portfolio-slider__preview"
+                href="https://portfolio-samwha.netlify.app"
+                target="_blank"
+              >
+                <img src="./assets/images/portfolio_samwha.gif" alt="포트폴리오 삼화 이미지" />
+              </a>
+              <div class="portfolio-slider__desc">
+                <dl class="portfolio-slider__desc-name">
+                  <dt>Project name</dt>
+                  <dd>삼화페인트</dd>
+                </dl>
+                <dl class="portfolio-slider__desc-skills">
+                  <dt>Skills</dt>
+                  <dd>반응형, 자바스크립트, 독특한 레이아웃</dd>
+                </dl>
+                <p class="portfolio-slider__desc-content">
+                  삼화페인트 브랜드의 메인 사이트를 구현하였습니다. 반응형으로 작업하였으며 클래스
+                  제어를 통해 여러가지 시각적 효과를 표현했습니다. 순수 자바스크립트로 배너
+                  슬라이드, 컬러코드 카피 등을 구현했습니다.
+                </p>
+                <a
+                  class="portfolio-slider__desc-link"
+                  href="https://portfolio-samwha.netlify.app"
+                  target="_blank"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-slider__item swiper-slide">
+              <a
+                class="portfolio-slider__preview"
+                href="https://portfolio-tomorrow-house.netlify.app"
+                target="_blank"
+              >
+                <img
+                  src="./assets/images/portfolio_tomorrow-house.gif"
+                  alt="포트폴리오 내일의 집 이미지"
+                />
+              </a>
+              <div class="portfolio-slider__desc">
+                <dl class="portfolio-slider__desc-name">
+                  <dt>Project name</dt>
+                  <dd>내일의 집</dd>
+                </dl>
+                <dl class="portfolio-slider__desc-skills">
+                  <dt>Skills</dt>
+                  <dd>반응형, 그리드, SCSS, 복잡한&nbsp;레이아웃</dd>
+                </dl>
+                <p class="portfolio-slider__desc-content">
+                  피그마 시안을 바탕으로 오늘의 집 상품 상세페이지를 구현했습니다. SCSS로 그리드
+                  시스템을 만들어 반응형 작업 및 복잡한 레이아웃을 구성했습니다.
+                </p>
+                <a
+                  class="portfolio-slider__desc-link"
+                  href="https://portfolio-tomorrow-house.netlify.app"
+                  target="_blank"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-slider__item swiper-slide">
+              <a class="portfolio-slider__preview" href="#" target="_blank">
+                <img src="./assets/images/portfolio_kerri.gif" alt="포트폴리오 캐리 이미지" />
+              </a>
+              <div class="portfolio-slider__desc">
+                <dl class="portfolio-slider__desc-name">
+                  <dt>Project name</dt>
+                  <dd>캐리</dd>
+                </dl>
+                <dl class="portfolio-slider__desc-skills">
+                  <dt>Skills</dt>
+                  <dd>제이쿼리</dd>
+                </dl>
+                <p class="portfolio-slider__desc-content">
+                  포트폴리오 기본 테마를 구현했습니다. 복잡한 기능들을 순수 제이쿼리를 사용하여
+                  작성하기 위해 노력하였습니다.
+                </p>
+                <a class="portfolio-slider__desc-link" href="#" target="_blank">자세히 보기</a>
+              </div>
+            </div>
+            <div class="portfolio-slider__item swiper-slide">
+              <a
+                class="portfolio-slider__preview"
+                href="https://portfolio-zflip3.netlify.app"
+                target="_blank"
+              >
+                <img src="./assets/images/portfolio_zflip3.gif" alt="포트폴리오 제트플립3 이미지" />
+              </a>
+              <div class="portfolio-slider__desc">
+                <dl class="portfolio-slider__desc-name">
+                  <dt>Project name</dt>
+                  <dd>제트플립3</dd>
+                </dl>
+                <dl class="portfolio-slider__desc-skills">
+                  <dt>Skills</dt>
+                  <dd>반응형, 패럴랙스 스크롤, 움직이는 배경 효과</dd>
+                </dl>
+                <p class="portfolio-slider__desc-content">
+                  삼성 제트플립3의 광고 동영상과 상품 페이지를 합친 프로젝트 입니다. 강의를 바탕으로
+                  알게된 자바스크립트 코드를 응용하여 제작하였습니다. 패럴랙스 스크롤링을 구현 및
+                  캔버스 기능을 활용해 여러 이미지를 배경에 그려 동영상 처럼 표현하였습니다.
+                </p>
+                <a
+                  class="portfolio-slider__desc-link"
+                  href="https://portfolio-zflip3.netlify.app"
+                  target="_blank"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-slider__item swiper-slide">
+              <a
+                class="portfolio-slider__preview"
+                href="https://portfolio-momentum.netlify.app"
+                target="_blank"
+              >
+                <img src="./assets/images/portfolio_momentum.gif" alt="포트폴리오 모멘텀 이미지" />
+              </a>
+              <div class="portfolio-slider__desc">
+                <dl class="portfolio-slider__desc-name">
+                  <dt>Project name</dt>
+                  <dd>Momentum</dd>
+                </dl>
+                <dl class="portfolio-slider__desc-skills">
+                  <dt>Skills</dt>
+                  <dd>자바스크립트, 날씨 API</dd>
+                </dl>
+                <p class="portfolio-slider__desc-content">
+                  크롬 익스텐션 모멘텀을 제작하였습니다. 순수 자바스크립트, 로컬저장소를 활용해
+                  간단한 CRUD를 구현하였습니다. 또한 날씨 API를 사용하여 사용자 위치정보를 바탕으로
+                  한 날씨 정보를 표현하였습니다.
+                </p>
+                <a
+                  class="portfolio-slider__desc-link"
+                  href="https://portfolio-momentum.netlify.app"
+                  target="_blank"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- 컨트롤 -->
+          <button
+            class="portfolio-slider__controls portfolio-slider__controls--prev"
+            aria-label="슬라이더 컨트롤"
+          ></button>
+          <button
+            class="portfolio-slider__controls portfolio-slider__controls--next"
+            aria-label="슬라이더 컨트롤"
+          ></button>
+        </div>
+      </div>
+    </section>
+    <!-- 에필로그 영역 -->
+    <section id="epilogue" class="epilogue">
+      <!-- 에필로그 타이틀 -->
+      <div class="section-container">
+        <div class="section-title">
+          <h2>Epilogue</h2>
+          <span>CONTACT</span>
+        </div>
+      </div>
+    </section>
     <footer class="footer"></footer>
   </body>
 </html>

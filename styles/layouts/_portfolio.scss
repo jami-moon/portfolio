@@ -1,0 +1,365 @@
+.portfolio {
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  &-thumbnails {
+    width: 70%;
+    padding: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    .swiper-slide {
+      height: 50px;
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+      filter: brightness(30%);
+      opacity: 0.7;
+
+      &-active {
+        filter: brightness(100%);
+        opacity: 1;
+      }
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+
+  &-slider {
+    position: relative;
+    width: 100%;
+
+    &__item {
+      .portfolio-slider__preview {
+        display: block;
+        width: 60%;
+        height: 100%;
+        margin: 0 auto 10px;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3s, opacity 0.3s;
+
+        img {
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+          object-fit: cover;
+          box-shadow: 4px 4px 8px 1px #454545;
+        }
+      }
+
+      .portfolio-slider__desc {
+        width: 70%;
+        margin: 0 auto;
+
+        &-name {
+          margin-bottom: 8px;
+
+          dt {
+            margin-bottom: 3px;
+            font-family: $font-montserrat;
+            font-size: 0.9rem;
+            color: $primary;
+          }
+
+          dd {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: $black;
+          }
+        }
+
+        &-skills {
+          margin-bottom: 15px;
+
+          dt {
+            margin-bottom: 3px;
+            font-family: $font-montserrat;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: $primary;
+          }
+
+          dd {
+            font-size: 0.9rem;
+          }
+        }
+
+        &-content {
+          margin-bottom: 25px;
+          font-size: 0.9rem;
+          line-height: 1.6;
+          color: $gray;
+        }
+
+        &-link {
+          display: inline-block;
+          padding: 10px;
+          font-size: 0.8rem;
+          color: $white;
+          background-color: $black;
+          transition: opacity 0.3s;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      &.swiper-slide-active {
+        a {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    &__controls {
+      z-index: 1;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+
+      &--prev {
+        @include pos-center-y;
+
+        &::before,
+        &::after {
+          position: absolute;
+          left: 0;
+          display: block;
+          width: 20px;
+          height: 2px;
+          content: "";
+          background-color: $gray;
+          transition: background-color 0.3s;
+        }
+
+        &::before {
+          top: 10px;
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          top: 23px;
+          transform: rotate(-135deg);
+        }
+      }
+
+      &--next {
+        @include pos-center-y;
+        right: 0;
+
+        &::before,
+        &::after {
+          position: absolute;
+          right: 0;
+          display: block;
+          width: 20px;
+          height: 2px;
+          content: "";
+          background-color: $gray;
+          transition: background-color 0.3s;
+        }
+
+        &::before {
+          top: 10px;
+          transform: rotate(-135deg);
+        }
+
+        &::after {
+          top: 23px;
+          transform: rotate(135deg);
+        }
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          background-color: $primary;
+        }
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $black;
+    }
+
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+      bottom: 0;
+    }
+  }
+
+  @include responsive(sm) {
+    &-slider {
+      &__item {
+        .portfolio-slider__desc {
+          &-name {
+            dt {
+              font-size: 1rem;
+            }
+
+            dd {
+              font-size: 1.5rem;
+            }
+          }
+
+          &-skills {
+            dt {
+              font-size: 1rem;
+            }
+
+            dd {
+              font-size: 1rem;
+            }
+          }
+
+          &-content {
+            font-size: 1rem;
+          }
+
+          &-link {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(md) {
+    .section-container {
+      padding: 100px 60px;
+    }
+
+    &-thumbnails {
+      .swiper-slide {
+        &-active {
+          height: 60px;
+        }
+      }
+    }
+
+    &-slider {
+      &__item {
+        .portfolio-slider__desc {
+          &-name {
+            dt {
+              font-size: 1.1rem;
+            }
+
+            dd {
+              font-size: 1.8rem;
+            }
+          }
+
+          &-skills {
+            dt {
+              font-size: 1.1rem;
+            }
+
+            dd {
+              font-size: 1.1rem;
+            }
+          }
+
+          &-content {
+            font-size: 1.1rem;
+          }
+
+          &-link {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(lg) {
+    &-slider {
+      &__controls {
+        width: 50px;
+        height: 50px;
+
+        &--prev {
+          &::before,
+          &::after {
+            width: 30px;
+            height: 3px;
+          }
+
+          &::before {
+            top: 15px;
+          }
+
+          &::after {
+            top: 35px;
+          }
+        }
+
+        &--next {
+          &::before,
+          &::after {
+            width: 30px;
+            height: 3px;
+          }
+
+          &::before {
+            top: 15px;
+          }
+
+          &::after {
+            top: 35px;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(xxl) {
+    .section-title {
+      margin-bottom: 30px;
+    }
+
+    &-thumbnails {
+      .swiper-slide {
+        height: 60px;
+
+        &-active {
+          height: 80px;
+          margin: 0 10px;
+        }
+      }
+    }
+
+    &-slider {
+      &__item {
+        .portfolio-slider__desc {
+          &-name {
+            dd {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
+      &__controls {
+        &--prev {
+          left: 2%;
+        }
+        &--next {
+          right: 2%;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1700px) {
+    .section-container {
+      padding: 50px 150px 150px;
+    }
+  }
+}
