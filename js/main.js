@@ -55,6 +55,9 @@ const thumbnails = new Swiper(".portfolio-thumbnails", {
   loop: true,
   slideToClickedSlide: true,
   touchRatio: 0,
+  pagination: {
+    el: ".swiper-pagination",
+  },
   breakpoints: {
     992: {
       slidesPerView: "6",
