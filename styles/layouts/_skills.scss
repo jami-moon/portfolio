@@ -1,4 +1,8 @@
 .skills {
+  .section-container {
+    padding-bottom: 0;
+  }
+
   .section-title {
     margin-bottom: 20px;
   }
@@ -72,6 +76,12 @@
     }
   }
 
+  @include responsive(sm) {
+    &__desc-box .skills__desc p {
+      font-size: 1rem;
+    }
+  }
+
   @include responsive(md) {
     &__desc-box {
       height: 350px;
@@ -93,6 +103,10 @@
   }
 
   @include responsive(xl) {
+    .section-container {
+      padding-bottom: 150px;
+    }
+
     .section-title {
       margin-bottom: 100px;
     }

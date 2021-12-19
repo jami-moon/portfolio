@@ -13,9 +13,9 @@
   &__image-wrapper {
     position: relative;
     flex-shrink: 0;
-    width: 50%;
+    width: 40%;
     height: 0;
-    padding-top: 50%;
+    padding-top: 40%;
     margin-bottom: 50px;
 
     .about__image {
@@ -70,8 +70,8 @@
 
     &__image-wrapper {
       order: 2;
-      width: 45%;
-      padding-top: 60%;
+      width: 35%;
+      padding-top: 55%;
       margin-bottom: 0;
     }
 
@@ -82,23 +82,32 @@
     }
   }
 
+  @include responsive(md) {
+    &__text {
+      font-size: 1.1rem;
+    }
+  }
+
   @include responsive(xl) {
     &__text {
       margin-right: 50px;
-      font-size: 1.1rem;
     }
   }
 
   @include responsive(xxl) {
     &__image-wrapper {
-      width: 45%;
-      height: 50%;
-      margin-top: -50px;
-      transition: margin-top 0.3s;
+      margin-top: -100px;
     }
 
     &__text {
       font-size: 1.1rem;
+      line-height: 3;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    &__image-wrapper {
+      margin-right: 80px;
     }
   }
 }
