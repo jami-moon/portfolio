@@ -1,0 +1,113 @@
+.epilogue {
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    position: relative;
+    padding: 50px;
+
+    .epilogue__text {
+      $ep-text-number: 6;
+
+      display: block;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
+      transform: translateY(30px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @for $i from 1 through $ep-text-number {
+        &:nth-child(#{$i}) {
+          transition-delay: calc(0.5s + 0.3s * #{$i});
+        }
+      }
+    }
+
+    .epilogue__background {
+      @include pos-center;
+      z-index: -1;
+      width: 200%;
+      font-family: "Oooh Baby", cursive;
+      font-size: 6.5rem;
+      color: #0000001c;
+      text-align: center;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      width: 60%;
+      height: 2px;
+      content: "";
+      background-color: #b3b3b3;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      animation: reveal1 2s forwards paused;
+    }
+
+    &::after {
+      right: 0;
+      bottom: 0;
+      animation: reveal2 2s forwards paused;
+    }
+
+    @keyframes reveal1 {
+      from {
+        clip-path: inset(0 100% 0 0);
+      }
+
+      to {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    @keyframes reveal2 {
+      from {
+        clip-path: inset(0 0 0 100%);
+      }
+
+      to {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+  }
+
+  &.ep-on {
+    .epilogue__content {
+      .epilogue__text {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      &::before,
+      &::after {
+        animation-play-state: running;
+      }
+    }
+  }
+
+  @include responsive(xxl) {
+    .section-title {
+      margin-bottom: 100px;
+    }
+
+    &__content {
+      padding: 70px;
+
+      .epilogue__text {
+        font-size: 1.4rem;
+        line-height: 1.8;
+      }
+    }
+  }
+}

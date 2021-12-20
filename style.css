@@ -1262,9 +1262,107 @@ section {
   }
 }
 
-.epilogue__content span {
+.epilogue .section-title {
+  margin-bottom: 30px;
+}
+.epilogue__content {
+  position: relative;
+  padding: 50px;
+}
+.epilogue__content .epilogue__text {
   display: block;
-  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(30px);
+}
+.epilogue__content .epilogue__text:last-child {
+  margin-bottom: 0;
+}
+.epilogue__content .epilogue__text:nth-child(1) {
+  transition-delay: calc(0.5s + 0.3s * 1);
+}
+.epilogue__content .epilogue__text:nth-child(2) {
+  transition-delay: calc(0.5s + 0.3s * 2);
+}
+.epilogue__content .epilogue__text:nth-child(3) {
+  transition-delay: calc(0.5s + 0.3s * 3);
+}
+.epilogue__content .epilogue__text:nth-child(4) {
+  transition-delay: calc(0.5s + 0.3s * 4);
+}
+.epilogue__content .epilogue__text:nth-child(5) {
+  transition-delay: calc(0.5s + 0.3s * 5);
+}
+.epilogue__content .epilogue__text:nth-child(6) {
+  transition-delay: calc(0.5s + 0.3s * 6);
+}
+.epilogue__content .epilogue__background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 200%;
+  font-family: "Oooh Baby", cursive;
+  font-size: 6.5rem;
+  color: #0000001c;
+  text-align: center;
+}
+.epilogue__content::before, .epilogue__content::after {
+  position: absolute;
+  display: block;
+  width: 60%;
+  height: 2px;
+  content: "";
+  background-color: #b3b3b3;
+}
+.epilogue__content::before {
+  top: 0;
+  left: 0;
+  animation: reveal1 2s forwards paused;
+}
+.epilogue__content::after {
+  right: 0;
+  bottom: 0;
+  animation: reveal2 2s forwards paused;
+}
+@keyframes reveal1 {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes reveal2 {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.epilogue.ep-on .epilogue__content .epilogue__text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.epilogue.ep-on .epilogue__content::before, .epilogue.ep-on .epilogue__content::after {
+  animation-play-state: running;
+}
+@media screen and (min-width: 1400px) {
+  .epilogue .section-title {
+    margin-bottom: 100px;
+  }
+  .epilogue__content {
+    padding: 70px;
+  }
+  .epilogue__content .epilogue__text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
