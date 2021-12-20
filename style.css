@@ -348,7 +348,6 @@ template {
 }
 
 html {
-  overflow-x: hidden;
   font-size: 1rem;
   scroll-behavior: smooth;
 }
@@ -519,10 +518,14 @@ section {
   top: 0;
   left: 0;
   z-index: 999;
-  width: 100%;
+  width: 100vw;
   height: 70px;
+  overflow-x: auto;
   background-color: #fff;
   transition: all 0.3s;
+}
+.header::-webkit-scrollbar {
+  display: none;
 }
 .header__container {
   display: flex;
@@ -556,9 +559,6 @@ section {
 }
 .header .gnb__item a.active {
   color: #ff2600;
-}
-.header .gnb__item:last-child {
-  margin-right: 0;
 }
 .header .copyright {
   font-family: "Montserrat", sans-serif;
@@ -757,6 +757,9 @@ section {
   }
 }
 
+.about {
+  overflow: hidden;
+}
 .about .section-title {
   margin-bottom: 50px;
 }
@@ -766,7 +769,6 @@ section {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  overflow-x: hidden;
 }
 .about__image-wrapper {
   position: relative;
@@ -1295,6 +1297,9 @@ section {
   }
 }
 
+.epilogue {
+  overflow: hidden;
+}
 .epilogue .section-title {
   margin-bottom: 30px;
 }

@@ -3,10 +3,15 @@
   top: 0;
   left: 0;
   z-index: $header-z-index;
-  width: 100%;
+  width: 100vw;
   height: 70px;
+  overflow-x: auto;
   background-color: $white;
   transition: all 0.3s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__container {
     display: flex;
@@ -46,10 +51,6 @@
         &.active {
           color: $primary;
         }
-      }
-
-      &:last-child {
-        margin-right: 0;
       }
     }
   }
