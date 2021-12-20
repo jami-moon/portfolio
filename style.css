@@ -348,6 +348,7 @@ template {
 }
 
 html {
+  overflow-x: hidden;
   font-size: 1rem;
   scroll-behavior: smooth;
 }
@@ -925,7 +926,12 @@ section {
 .skills__list {
   display: flex;
   align-self: flex-start;
+  width: 100%;
   margin-bottom: 40px;
+  overflow-y: auto;
+}
+.skills__list::-webkit-scrollbar {
+  display: none;
 }
 .skills__item {
   margin-right: 10px;
