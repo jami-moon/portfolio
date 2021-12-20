@@ -1,7 +1,8 @@
 "use strict";
 
 const gnbTab = document.querySelectorAll(".gnb__item a");
-const sections = document.getElementsByTagName("section");
+const sections = document.querySelectorAll(".section");
+const epSection = document.querySelector(".epilogue");
 const skillItem = document.querySelectorAll(".skills__item");
 const skillDesc = document.querySelectorAll(".skills__desc");
 
@@ -10,17 +11,35 @@ function getAbsoluteTop(el) {
   return window.pageYOffset + el.getBoundingClientRect().top;
 }
 
+// 엘리먼트 위치 확인
+function checkElementLocation(el, triggerDiff) {
+  const elFromTop = el.getBoundingClientRect().top;
+  return elFromTop > window.innerHeight + (triggerDiff || 0);
+}
+
+// 현재 위치에 맞게 gnb 텍스트 색상 변경
+
+function gnbScrollActive() {
+  const triggerPoint = window.innerHeight / 4;
+
+  sections.forEach((el, idx) => {
+    if (!checkElementLocation(el, -triggerPoint)) {
+      const gnbTarget = gnbTab[idx];
+
+      gnbTab.forEach((el) => {
+        el.classList.remove("active");
+      });
+      gnbTarget.classList.add("active");
+    }
+  });
+}
+
 // gnb 클릭시 텍스트 색상 변경 및 해당 위치로 스크롤
 gnbTab.forEach((el, idx) => {
   el.addEventListener("click", (e) => {
     e.preventDefault();
-    const gnbTarget = gnbTab[idx];
     const sectionTarget = sections[idx];
 
-    gnbTab.forEach((el) => {
-      el.classList.remove("active");
-    });
-    gnbTarget.classList.add("active");
     window.scrollTo(0, getAbsoluteTop(sectionTarget));
   });
 });
@@ -100,13 +119,7 @@ const thumbnails = new Swiper(".portfolio-thumbnails", {
 portfolios.controller.control = thumbnails;
 thumbnails.controller.control = portfolios;
 
-// 엘리먼트 위치 확인
-function checkElementLocation(el, triggerDiff) {
-  const elFromTop = el.getBoundingClientRect().top;
-  return elFromTop > window.innerHeight + (triggerDiff || 0);
-}
-
-//윈도우 스크롤 이벤트 핸들러
+//섹션 스크롤 이벤트핸들러
 function handleScroll() {
   const elToLeft = document.querySelectorAll(".scroll-left");
   const elToRight = document.querySelectorAll(".scroll-right");
@@ -133,8 +146,19 @@ function handleScroll() {
   });
 }
 
+//에필로그 섹션 스크롤 이벤트핸들러
+function epScrollOn() {
+  if (!checkElementLocation(epSection)) {
+    epSection.classList.add("ep-on");
+  }
+}
+
 // 윈도우 스크롤이벤트
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", () => {
+  gnbScrollActive();
+  handleScroll();
+  epScrollOn();
+});
 
 // 윈도우 사이즈 변경시 함수 재실행
 window.addEventListener("resize", () => {
