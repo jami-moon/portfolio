@@ -15,7 +15,9 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   color: $black;
+  background-color: $background;
 }
 
 h1 {

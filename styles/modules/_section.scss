@@ -1,5 +1,5 @@
 section {
-  background-color: $background;
+  transition: opacity 1s, transform 1s;
 
   @include responsive(xl) {
     padding-left: $xl-header-width;
@@ -15,7 +15,6 @@ section {
   flex-direction: column;
   align-items: center;
   padding: 80px 15px;
-  transition: opacity 1s, transform 1s;
 
   .section-title {
     align-self: flex-start;
@@ -39,7 +38,7 @@ section {
   }
 
   @include responsive(sm) {
-    padding: 50px 60px;
+    padding: 80px 60px;
 
     .section-title {
       h2 {
@@ -53,6 +52,8 @@ section {
   }
 
   @include responsive(md) {
+    padding: 100px 60px;
+
     .section-title {
       h2 {
         font-size: 1.3rem;

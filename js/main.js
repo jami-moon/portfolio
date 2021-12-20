@@ -1,37 +1,59 @@
 "use strict";
 
+const gnbTab = document.querySelectorAll(".gnb__item a");
+const sections = document.getElementsByTagName("section");
 const skillItem = document.querySelectorAll(".skills__item");
 const skillDesc = document.querySelectorAll(".skills__desc");
 
-// skills 섹션 탭메뉴
-// innerWidth 1200px 이하에서 열릴 때만 실행
-function skillTabFunc() {
-  if (window.innerWidth < 1200) {
-    for (let i = 0; i < skillItem.length; i++) {
-      if (i < 4) {
-        skillItem[i].addEventListener("click", () => {
-          for (let i = 0; i < 4; i++) {
-            skillItem[i].classList.remove("active");
-            skillDesc[i].classList.remove("open");
-          }
-          skillItem[i].classList.add("active");
-          skillDesc[i].classList.add("open");
-        });
-      } else {
-        skillItem[i].addEventListener("click", () => {
-          for (let i = 4; i < skillItem.length; i++) {
-            skillItem[i].classList.remove("active");
-            skillDesc[i].classList.remove("open");
-          }
-          skillItem[i].classList.add("active");
-          skillDesc[i].classList.add("open");
-        });
-      }
-    }
-  }
+// 섹션 절대 위치 구하기
+function getAbsoluteTop(el) {
+  return window.pageYOffset + el.getBoundingClientRect().top;
 }
 
-skillTabFunc();
+// gnb 클릭시 텍스트 색상 변경 및 해당 위치로 스크롤
+gnbTab.forEach((el, idx) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const gnbTarget = gnbTab[idx];
+    const sectionTarget = sections[idx];
+
+    gnbTab.forEach((el) => {
+      el.classList.remove("active");
+    });
+    gnbTarget.classList.add("active");
+    window.scrollTo(0, getAbsoluteTop(sectionTarget));
+  });
+});
+
+// skills 섹션 탭메뉴 구현
+// innerWidth 1200px 이하에서만 실행
+function skillTabFunc() {
+  skillItem.forEach((el, idx) => {
+    if (idx < 4) {
+      el.addEventListener("click", () => {
+        for (let i = 0; i < 4; i++) {
+          skillItem[i].classList.remove("active");
+          skillDesc[i].classList.remove("open");
+        }
+        skillItem[idx].classList.add("active");
+        skillDesc[idx].classList.add("open");
+      });
+    } else {
+      el.addEventListener("click", () => {
+        for (let i = 4; i < skillItem.length; i++) {
+          skillItem[i].classList.remove("active");
+          skillDesc[i].classList.remove("open");
+        }
+        skillItem[idx].classList.add("active");
+        skillDesc[idx].classList.add("open");
+      });
+    }
+  });
+}
+
+if (window.innerWidth < 1200) {
+  skillTabFunc();
+}
 
 // 포트폴리오 섹션 Swiper 설정
 const portfolios = new Swiper(".portfolio-slider", {
@@ -79,8 +101,8 @@ portfolios.controller.control = thumbnails;
 thumbnails.controller.control = portfolios;
 
 // 엘리먼트 위치 확인
-function checkElementLocation(elem, triggerDiff) {
-  const elFromTop = elem.getBoundingClientRect().top;
+function checkElementLocation(el, triggerDiff) {
+  const elFromTop = el.getBoundingClientRect().top;
   return elFromTop > window.innerHeight + (triggerDiff || 0);
 }
 
@@ -88,7 +110,7 @@ function checkElementLocation(elem, triggerDiff) {
 function handleScroll() {
   const elToLeft = document.querySelectorAll(".scroll-left");
   const elToRight = document.querySelectorAll(".scroll-right");
-  const triggerPoint = window.innerHeight / 2;
+  const triggerPoint = window.innerHeight / 4;
 
   elToLeft.forEach((el) => {
     if (checkElementLocation(el, -triggerPoint)) {
@@ -115,4 +137,8 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 
 // 윈도우 사이즈 변경시 함수 재실행
-window.addEventListener("resize", skillTabFunc);
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 1200) {
+    skillTabFunc();
+  }
+});

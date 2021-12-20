@@ -37,6 +37,15 @@
         font-family: $font-montserrat;
         font-size: 0.9rem;
         color: $gray;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $primary;
+        }
+
+        &.active {
+          color: $primary;
+        }
       }
 
       &:last-child {
@@ -72,7 +81,7 @@
   }
 
   @include responsive(md) {
-    height: 100px;
+    height: 90px;
 
     &__title {
       a {

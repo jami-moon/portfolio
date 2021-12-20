@@ -353,7 +353,9 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   color: #000;
+  background-color: #f8f8f8;
 }
 
 h1 {
@@ -424,7 +426,7 @@ address {
 }
 
 section {
-  background-color: #f8f8f8;
+  transition: opacity 1s, transform 1s;
 }
 @media screen and (min-width: 1200px) {
   section {
@@ -442,7 +444,6 @@ section {
   flex-direction: column;
   align-items: center;
   padding: 80px 15px;
-  transition: opacity 1s, transform 1s;
 }
 .section-container .section-title {
   align-self: flex-start;
@@ -464,7 +465,7 @@ section {
 }
 @media screen and (min-width: 576px) {
   .section-container {
-    padding: 50px 60px;
+    padding: 80px 60px;
   }
   .section-container .section-title h2 {
     font-size: 1.1rem;
@@ -474,6 +475,9 @@ section {
   }
 }
 @media screen and (min-width: 768px) {
+  .section-container {
+    padding: 100px 60px;
+  }
   .section-container .section-title h2 {
     font-size: 1.3rem;
   }
@@ -578,6 +582,13 @@ section {
   font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
   color: #767676;
+  transition: color 0.3s;
+}
+.header .gnb__item a:hover {
+  color: #ff2600;
+}
+.header .gnb__item a.active {
+  color: #ff2600;
 }
 .header .gnb__item:last-child {
   margin-right: 0;
@@ -600,7 +611,7 @@ section {
 }
 @media screen and (min-width: 768px) {
   .header {
-    height: 100px;
+    height: 90px;
   }
   .header__title a {
     font-size: 2rem;
