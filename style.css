@@ -812,7 +812,7 @@ section {
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
-  transition: filter 0.3s;
+  transition: filter 1s;
 }
 .about__image-wrapper .about__image:hover {
   filter: none;
@@ -1327,7 +1327,8 @@ section {
 }
 .epilogue__content {
   position: relative;
-  padding: 50px;
+  padding: 50px 30px;
+  margin-bottom: 100px;
 }
 .epilogue__content .epilogue__text {
   display: block;
@@ -1341,23 +1342,26 @@ section {
 .epilogue__content .epilogue__text:last-child {
   margin-bottom: 0;
 }
+.epilogue__content .epilogue__text strong {
+  color: #ff2600;
+}
 .epilogue__content .epilogue__text:nth-child(1) {
-  transition-delay: calc(0.5s + 0.3s * 1);
+  transition-delay: calc(1.5s + 0.3s * 1);
 }
 .epilogue__content .epilogue__text:nth-child(2) {
-  transition-delay: calc(0.5s + 0.3s * 2);
+  transition-delay: calc(1.5s + 0.3s * 2);
 }
 .epilogue__content .epilogue__text:nth-child(3) {
-  transition-delay: calc(0.5s + 0.3s * 3);
+  transition-delay: calc(1.5s + 0.3s * 3);
 }
 .epilogue__content .epilogue__text:nth-child(4) {
-  transition-delay: calc(0.5s + 0.3s * 4);
+  transition-delay: calc(1.5s + 0.3s * 4);
 }
 .epilogue__content .epilogue__text:nth-child(5) {
-  transition-delay: calc(0.5s + 0.3s * 5);
+  transition-delay: calc(1.5s + 0.3s * 5);
 }
 .epilogue__content .epilogue__text:nth-child(6) {
-  transition-delay: calc(0.5s + 0.3s * 6);
+  transition-delay: calc(1.5s + 0.3s * 6);
 }
 .epilogue__content .epilogue__background {
   position: absolute;
@@ -1367,9 +1371,10 @@ section {
   z-index: -1;
   width: 200%;
   font-family: "Oooh Baby", cursive;
-  font-size: 6.5rem;
+  font-size: 4rem;
   color: #0000001c;
   text-align: center;
+  word-break: keep-all;
 }
 .epilogue__content::before, .epilogue__content::after {
   position: absolute;
@@ -1382,12 +1387,12 @@ section {
 .epilogue__content::before {
   top: 0;
   left: 0;
-  animation: reveal1 2s forwards paused;
+  animation: reveal1 3s forwards paused;
 }
 .epilogue__content::after {
   right: 0;
   bottom: 0;
-  animation: reveal2 2s forwards paused;
+  animation: reveal2 3s forwards paused;
 }
 @keyframes reveal1 {
   from {
@@ -1405,6 +1410,26 @@ section {
     clip-path: inset(0 0 0 0);
   }
 }
+.epilogue__contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.epilogue__contact-item .material-icons {
+  margin-right: 20px;
+  font-size: 24px;
+}
+.epilogue__contact-item img {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+}
+.epilogue__contact-item .epilogue__contact-info {
+  font-size: 0.9rem;
+  color: #767676;
+}
 .epilogue.ep-on .epilogue__content .epilogue__text {
   opacity: 1;
   transform: translateY(0);
@@ -1412,16 +1437,82 @@ section {
 .epilogue.ep-on .epilogue__content::before, .epilogue.ep-on .epilogue__content::after {
   animation-play-state: running;
 }
+@media screen and (min-width: 576px) {
+  .epilogue__content .epilogue__text {
+    font-size: 1rem;
+  }
+  .epilogue__content .epilogue__background {
+    font-size: 4.3rem;
+  }
+  .epilogue__contact .epilogue__contact-info {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .epilogue .section-title {
+    margin-bottom: 50px;
+  }
+  .epilogue__content .epilogue__text {
+    font-size: 1.1rem;
+  }
+  .epilogue__content .epilogue__background {
+    font-size: 5rem;
+  }
+  .epilogue__contact .material-icons {
+    font-size: 28px;
+  }
+  .epilogue__contact img {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .epilogue__content .epilogue__text {
+    font-size: 1.2rem;
+  }
+  .epilogue__content .epilogue__background {
+    font-size: 5rem;
+  }
+  .epilogue__contact .material-icons {
+    font-size: 30px;
+  }
+  .epilogue__contact img {
+    width: 30px;
+    height: 30px;
+  }
+  .epilogue__contact .epilogue__contact-info {
+    font-size: 1.1rem;
+  }
+}
 @media screen and (min-width: 1400px) {
+  .epilogue .section-container {
+    padding: 50px 150px;
+  }
+}
+@media screen and (min-width: 1700px) {
   .epilogue .section-title {
     margin-bottom: 100px;
   }
   .epilogue__content {
-    padding: 70px;
+    padding: 70px 150px;
   }
   .epilogue__content .epilogue__text {
+    margin-bottom: 30px;
     font-size: 1.4rem;
-    line-height: 1.8;
+  }
+  .epilogue__content .epilogue__background {
+    font-size: 6.5rem;
+    text-align: center;
+  }
+  .epilogue__contact .material-icons {
+    font-size: 35px;
+  }
+  .epilogue__contact img {
+    width: 35px;
+    height: 35px;
+  }
+  .epilogue__contact .epilogue__contact-info {
+    font-size: 1.2rem;
   }
 }
 
