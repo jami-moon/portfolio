@@ -99,6 +99,14 @@
     }
   }
 
+  @media screen and (max-width: 400px) {
+    &__title {
+      a {
+        display: none;
+      }
+    }
+  }
+
   @include responsive(xl) {
     width: $xl-header-width;
     height: 100vh;
