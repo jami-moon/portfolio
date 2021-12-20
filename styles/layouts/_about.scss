@@ -4,6 +4,7 @@
   }
 
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,19 +44,48 @@
     text-align: left;
 
     strong {
+      font-size: 1.4rem;
+      font-weight: 700;
       color: $black;
     }
+  }
+
+  &__background {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 0.9;
+    color: transparent;
+    text-align: center;
+    letter-spacing: -0.01em;
+    transform: translate(-50%, 50%);
+    -webkit-text-stroke: 4px $lightgray;
   }
 
   @include responsive(sm) {
     &__text {
       font-size: 1rem;
     }
+
+    &__background {
+      width: 150%;
+      font-size: 130px;
+    }
   }
 
   @include responsive(md) {
     &__text {
+      font-size: 1.1rem;
       line-height: 1.6;
+    }
+
+    &__background {
+      width: 120%;
+      font-size: 170px;
     }
   }
 
@@ -66,6 +96,20 @@
       align-items: flex-start;
       justify-content: space-between;
       width: 100%;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: 1%;
+        display: block;
+        font-family: $font-montserrat;
+        font-size: 1.2rem;
+        color: $gray;
+        letter-spacing: 0.01em;
+        content: "At Baekdu Mountain";
+        transform: rotate(90deg);
+        transform-origin: bottom right;
+      }
     }
 
     &__image-wrapper {
@@ -80,17 +124,24 @@
       margin-right: 20px;
       line-height: 2em;
     }
-  }
 
-  @include responsive(md) {
-    &__text {
-      font-size: 1.1rem;
+    &__background {
+      bottom: 0;
+      left: -15%;
+      width: 80%;
+      font-size: 160px;
+      text-align: right;
+      transform: translate(0, 0);
     }
   }
 
   @include responsive(xl) {
     &__text {
       margin-right: 50px;
+    }
+
+    &__background {
+      font-size: 120px;
     }
   }
 
@@ -103,11 +154,28 @@
       font-size: 1.1rem;
       line-height: 3;
     }
+
+    &__background {
+      left: -10%;
+      width: 75%;
+      font-size: 150px;
+    }
   }
 
   @media screen and (min-width: 1600px) {
+    &__content::after {
+      margin-right: 80px;
+    }
+
     &__image-wrapper {
       margin-right: 80px;
+    }
+
+    &__background {
+      bottom: 0;
+      left: -12%;
+      width: 70%;
+      font-size: 180px;
     }
   }
 }
