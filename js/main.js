@@ -166,3 +166,8 @@ window.addEventListener("resize", () => {
     skillTabFunc();
   }
 });
+
+// 윈도우 로드 이벤트
+window.addEventListener("load", () => {
+  gnbScrollActive();
+});
