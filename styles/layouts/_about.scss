@@ -6,10 +6,8 @@
   }
 
   &__content {
+    @include column-flex;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
   }
 
@@ -93,10 +91,8 @@
 
   @include responsive(lg) {
     &__content {
-      display: flex;
+      @include flex(between, start);
       flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
       width: 100%;
 
       &::after {

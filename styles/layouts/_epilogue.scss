@@ -92,9 +92,7 @@
 
   &__contact {
     &-item {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      @include flex(start, center);
       margin-bottom: 10px;
 
       .material-icons {

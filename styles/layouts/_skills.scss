@@ -8,8 +8,7 @@
   }
 
   &__list {
-    display: flex;
-    align-self: flex-start;
+    @include flex(start, center);
     width: 100%;
     margin-bottom: 40px;
     overflow-y: auto;
@@ -118,9 +117,8 @@
     }
 
     &__desc-box {
-      display: flex;
+      @include flex(between, center);
       flex-wrap: wrap;
-      justify-content: space-between;
       height: 100%;
       margin-bottom: 50px;
 
