@@ -167,7 +167,19 @@ window.addEventListener("resize", () => {
   }
 });
 
+if (document.body.classList.contains("before-load")) {
+  document.querySelector("html").style.overflow = `hidden`;
+}
+
 // 윈도우 로드 이벤트
 window.addEventListener("load", () => {
+  document.body.classList.remove("before-load");
+  document.querySelector("html").style.overflow = `auto`;
+
   gnbScrollActive();
+
+  // 로딩 요소 로딩 완료 후 삭제 시키기
+  document.querySelector(".loading").addEventListener("transitionend", (e) => {
+    document.body.removeChild(e.currentTarget);
+  });
 });

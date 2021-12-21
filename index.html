@@ -38,7 +38,12 @@
     <!-- Main JS -->
     <script defer src="./js/main.js"></script>
   </head>
-  <body>
+  <body class="before-load">
+    <!-- 로딩 -->
+    <div class="loading">
+      <div class="loading__ring">LOADING</div>
+      <span class="loading__text">방문해 주셔서 감사합니다!</span>
+    </div>
     <!-- 헤더 영역 -->
     <header class="header">
       <div class="header__container">
@@ -601,11 +606,13 @@
         <ul class="epilogue__contact">
           <li class="epilogue__contact-item">
             <span class="material-icons"> call </span>
-            <span class="epilogue__contact-info">010-5651-7372</span>
+            <a class="epilogue__contact-info" href="tel:010-5651-7372">010-5651-7372</a>
           </li>
           <li class="epilogue__contact-item">
             <span class="material-icons"> email </span>
-            <span class="epilogue__contact-info">sherlockyu155@gmail.com</span>
+            <a class="epilogue__contact-info" href="mailto:sherlockyu155@gmail.com"
+              >sherlockyu155@gmail.com</a
+            >
           </li>
           <li class="epilogue__contact-item">
             <img src="./assets/images/epilogue_github.png" alt="깃허브 아이콘" />
