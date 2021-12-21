@@ -176,12 +176,11 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     document.body.classList.remove("before-load");
     document.querySelector("html").style.overflow = `auto`;
+
+    setTimeout(() => {
+      document.body.removeChild(document.querySelector(".loading"));
+    }, 500);
   }, 1000);
 
   gnbScrollActive();
-
-  // 로딩 요소 로딩 완료 후 삭제 시키기
-  document.querySelector(".loading").addEventListener("transitionend", (e) => {
-    document.body.removeChild(e.currentTarget);
-  });
 });
