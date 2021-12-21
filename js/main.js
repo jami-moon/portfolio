@@ -173,8 +173,10 @@ if (document.body.classList.contains("before-load")) {
 
 // 윈도우 로드 이벤트
 window.addEventListener("load", () => {
-  document.body.classList.remove("before-load");
-  document.querySelector("html").style.overflow = `auto`;
+  setTimeout(() => {
+    document.body.classList.remove("before-load");
+    document.querySelector("html").style.overflow = `auto`;
+  }, 1000);
 
   gnbScrollActive();
 
