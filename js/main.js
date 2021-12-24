@@ -167,6 +167,7 @@ window.addEventListener("resize", () => {
   }
 });
 
+// 로딩 페이지 스크롤 막기
 if (document.body.classList.contains("before-load")) {
   document.querySelector("html").style.overflow = `hidden`;
 }
