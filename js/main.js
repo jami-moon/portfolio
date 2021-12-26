@@ -177,11 +177,8 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     document.body.classList.remove("before-load");
     document.querySelector("html").style.overflow = `auto`;
-
-    setTimeout(() => {
-      document.body.removeChild(document.querySelector(".loading"));
-    }, 500);
-  }, 1000);
+    document.body.removeChild(document.querySelector(".loading"));
+  }, 500);
 
   gnbScrollActive();
 });
