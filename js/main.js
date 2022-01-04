@@ -80,7 +80,6 @@ const portfolios = new Swiper(".portfolio-slider", {
   loop: true,
   speed: 600,
   slidesPerView: 1,
-  loop: true,
   loopedSlides: 6,
   navigation: {
     prevEl: ".portfolio-slider__controls--prev",
